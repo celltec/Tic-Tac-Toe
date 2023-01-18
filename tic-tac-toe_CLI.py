@@ -47,8 +47,7 @@ for round in count(1):
             break
 
         # Extract cell coordinates from chosen number
-        row = (choice - 1) // 3
-        col = (choice - 1) % 3
+        row, col = divmod(choice - 1, 3)
 
         # Check if cell was already used
         if board[row][col]:
