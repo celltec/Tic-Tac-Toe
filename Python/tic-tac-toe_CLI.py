@@ -2,8 +2,8 @@ import os
 from collections import Counter
 from itertools import count, cycle
 
-X = '\033[35m' 'X' '\033[0m'
-O = '\033[36m' 'O' '\033[0m'
+X = '\x1B[35m' 'X' '\x1B[0m'
+O = '\x1B[36m' 'O' '\x1B[0m'
 
 def print_board(board):
     os.system('cls')
@@ -14,7 +14,7 @@ def print_board(board):
         print('│', end='')
 
         for item in row:
-            char = item or f'\033[90;3m{counter}\033[0m'
+            char = item or f'\x1B[90;3m{counter}\x1B[0m'
             print(f' {char} │', end='')
             counter += 1
         print()
